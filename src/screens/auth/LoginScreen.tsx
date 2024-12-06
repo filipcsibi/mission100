@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     justifyContent: "center",
     borderWidth: 2,
-    borderColor: "#A61515",
+    borderColor: "#0f4a68",
     padding: 8,
   },
   activity: {
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   button: {
-    backgroundColor: "#A61515",
+    backgroundColor: "#0f4a68",
     height: height * 0.07,
     borderRadius: 8,
     alignItems: "center",
@@ -138,14 +138,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   welcome: {
-    color: "#A61515",
+    color: "#0f4a68",
     alignSelf: "center",
     fontFamily: "Courier",
     fontSize: 28,
     fontWeight: "bold",
   },
   glad: {
-    color: "#A61515",
+    color: "#0f4a68",
     alignSelf: "center",
     fontFamily: "Courier",
     fontSize: 28,
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   buttontext: {
-    color: "#A61515",
+    color: "#0f4a68",
     fontWeight: "bold",
     fontSize: 24,
   },
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 16,
-    color: "#A61515",
+    color: "#0f4a68",
   },
   logo: {
     width: width * 0.2,
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
   },
   irclr: {
     fontSize: 32,
-    color: "#A61515",
+    color: "#0f4a68",
     fontWeight: "bold",
     fontFamily: "Courier",
   },

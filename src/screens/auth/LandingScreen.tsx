@@ -20,8 +20,7 @@ const LandingScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topflex}>
-        <Image source={Logo} style={styles.logo} />
-        <Text style={styles.irclr}>irclr</Text>
+        <Text style={styles.irclr}>Mission100</Text>
       </View>
 
       <View style={styles.bottomflex}>
@@ -30,15 +29,13 @@ const LandingScreen: React.FC = () => {
             flex: 0.8,
           }}
         >
-          <Text style={styles.heyyou}>Hey you!</Text>
-          <Text style={styles.quote}>
-            Dive into the unknown and uncover the secrets of your surroundings.
-          </Text>
+          <Text style={styles.heyyou}>Welcome!</Text>
+          <Text style={styles.quote}>Do you want to live 100 years?</Text>
           <TouchableOpacity
             style={styles.touchable}
             onPress={() => navigation.navigate("registerscreen")}
           >
-            <Text style={styles.buttontext}>Are you in?</Text>
+            <Text style={styles.buttontext}>ABSOLUTELY!</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.touchable2}>
             <Text style={styles.learnmore}>Learn More</Text>
@@ -69,7 +66,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   buttontext: {
-    color: "#A61515",
+    color: "#0f4a68",
     fontWeight: "bold",
     fontSize: 24,
     fontFamily: "Courier",
@@ -93,12 +90,12 @@ const styles = StyleSheet.create({
   },
   irclr: {
     fontSize: 32,
-    color: "#A61515",
+    color: "#0f4a68",
     fontWeight: "bold",
     fontFamily: "Courier",
   },
   bottomflex: {
-    backgroundColor: "#A61515",
+    backgroundColor: "#1eb4e8",
     flex: 0.6,
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
@@ -115,7 +112,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   touchable2: {
-    backgroundColor: "#15A664",
+    backgroundColor: "#0f4a68",
     height: height * 0.07,
     borderRadius: 8,
     alignItems: "center",
