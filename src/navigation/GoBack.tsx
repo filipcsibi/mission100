@@ -10,7 +10,7 @@ const GoBackButton: React.FC = () => {
 
   return (
     <TouchableOpacity onPress={() => navigation.goBack()} style={styles.button}>
-      <ArrowBack />
+      <ArrowBack width={32} height={32} />
     </TouchableOpacity>
   );
 };
