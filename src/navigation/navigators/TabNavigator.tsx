@@ -7,6 +7,7 @@ import {
   Search,
   SearchFill,
 } from "@/assets/svgs";
+import ProfileScreen from "@/src/screens/ProfileScreen";
 import Screen1 from "@/src/screens/Screen1";
 import Screen2 from "@/src/screens/Screen2";
 import Screen3 from "@/src/screens/Screen3";
@@ -72,7 +73,7 @@ const TabNavigator = () => {
       />
       <Tab.Screen
         name="profilescreen"
-        component={Screen4}
+        component={ProfileScreen}
         options={{
           tabBarIcon: () => <Account width={32} height={32} />,
           headerShown: false,
