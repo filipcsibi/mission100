@@ -7,6 +7,7 @@ import {
   Search,
   SearchFill,
 } from "@/assets/svgs";
+import ChatScreen from "@/src/screens/chat/ChatScreen";
 import Screen1 from "@/src/screens/Screen1";
 import Screen2 from "@/src/screens/Screen2";
 import Screen3 from "@/src/screens/Screen3";
@@ -48,7 +49,7 @@ const TabNavigator = () => {
       />
       <Tab.Screen
         name="searchscreen"
-        component={Screen2}
+        component={ChatScreen}
         options={{
           tabBarIcon: ({ focused }) =>
             focused ? (
