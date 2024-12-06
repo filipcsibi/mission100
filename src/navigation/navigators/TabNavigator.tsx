@@ -23,9 +23,9 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerTitle: "Circlr",
+        headerTitle: "Mission100",
         headerTitleStyle: {
-          color: "#A61515",
+          color: "#0f4a68",
           fontSize: 24,
           fontWeight: "bold",
           fontFamily: "Courier",
@@ -59,7 +59,7 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="searchscreen"
+        name="postscreen"
         component={Screen3}
         options={{
           tabBarIcon: ({ focused }) =>

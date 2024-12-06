@@ -83,9 +83,9 @@ const RegisterScreen: React.FC = () => {
       )}
       <Text style={styles.using}>Sign up using</Text>
       <View style={styles.socials}>
-        <Facebook width={width * 0.22} height={height * 0.1} />
-        <Google width={width * 0.22} height={height * 0.1} />
-        <Apple width={width * 0.22} height={height * 0.1} />
+        <Facebook width={width * 0.2} height={height * 0.1} />
+        <Google width={width * 0.2} height={height * 0.1} />
+        <Apple width={width * 0.2} height={height * 0.1} />
       </View>
     </View>
   );
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   socials: {
     flexDirection: "row",
     justifyContent: "center",
-    marginVertical: 20,
+    marginVertical: 16,
     gap: 16,
   },
   activity: {
@@ -121,11 +121,11 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     justifyContent: "center",
     borderWidth: 2,
-    borderColor: "#A61515",
+    borderColor: "#0f4a68",
     padding: 8,
   },
   button: {
-    backgroundColor: "#A61515",
+    backgroundColor: "#0f4a68",
     height: height * 0.07,
     borderRadius: 8,
     alignItems: "center",
@@ -140,14 +140,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   welcome: {
-    color: "#A61515",
+    color: "#0f4a68",
     alignSelf: "center",
     fontFamily: "Courier",
     fontSize: 28,
     fontWeight: "bold",
   },
   glad: {
-    color: "#A61515",
+    color: "#0f4a68",
     alignSelf: "center",
     fontFamily: "Courier",
     fontSize: 28,
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   buttontext: {
-    color: "#A61515",
+    color: "#0f4a68",
     fontWeight: "bold",
     fontSize: 24,
   },
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 16,
-    color: "#A61515",
+    color: "#0f4a68",
   },
   logo: {
     width: width * 0.2,
@@ -176,11 +176,12 @@ const styles = StyleSheet.create({
   topflex: {
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 24,
     marginBottom: 48,
   },
   irclr: {
     fontSize: 32,
-    color: "#A61515",
+    color: "#0f4a68",
     fontWeight: "bold",
     fontFamily: "Courier",
   },
