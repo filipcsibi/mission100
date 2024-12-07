@@ -196,11 +196,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#FBFCFF",
   },
   bg: {
-    shadowColor: "#1eb4e8", // Culoarea umbrei
-    shadowOffset: { width: 0, height: 10 }, // Poziția umbrei (orizontală și verticală)
-    shadowOpacity: 0.5, // Opacitatea umbrei, mai intensă
-    shadowRadius: 15, // Raza umbrei, mai mare pentru un efect de difuzie mai largă
-    elevation: 20, // Efect de umbră pe Android, mai intens
+    shadowColor: "#1eb4e8",
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.5,
+    shadowRadius: 15,
+    elevation: 20,
   },
   bgImage: {
     width: width,
@@ -231,11 +231,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     marginVertical: 8,
     borderRadius: 12,
-    shadowColor: "#000", // Culoarea umbrei
-    shadowOffset: { width: 0, height: 4 }, // Poziția umbrei (orizontală și verticală)
-    shadowOpacity: 0.1, // Opacitatea umbrei
-    shadowRadius: 6, // Raza umbrei
-    elevation: 5, // Efectul de umbră pe Android
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 5,
   },
   itemText: {
     fontSize: 16,

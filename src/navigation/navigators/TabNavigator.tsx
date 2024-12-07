@@ -55,6 +55,14 @@ const TabNavigator = () => {
         name="searchscreen"
         component={ChatScreen}
         options={{
+          headerTitle: "AI Assistant",
+          headerTitleStyle: {
+            color: "#0f4a68",
+            fontSize: 24,
+            fontWeight: "bold",
+            fontFamily: "Courier",
+          },
+          headerTitleAlign: "center",
           tabBarIcon: ({ focused }) =>
             focused ? (
               <SearchFill width={32} height={32} />
