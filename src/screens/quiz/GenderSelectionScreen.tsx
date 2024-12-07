@@ -92,8 +92,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 30,
     borderRadius: 10,
-    borderWidth: 2,
-    borderColor: "#1eb4e8",
   },
   selectedGender: {
     backgroundColor: "#1eb4e8",

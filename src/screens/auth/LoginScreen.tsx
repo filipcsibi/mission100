@@ -47,6 +47,7 @@ const LoginScreen = ({
               style={styles.placeholder}
               placeholder="Email Address"
               value={email}
+              placeholderTextColor={"grey"}
               onChangeText={(email) => setEmail(email)}
               autoCapitalize="none"
             />
@@ -55,6 +56,7 @@ const LoginScreen = ({
               placeholder="Password"
               secureTextEntry
               value={password}
+              placeholderTextColor={"grey"}
               onChangeText={(password) => setPassword(password)}
               autoCapitalize="none"
             />
@@ -112,6 +114,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#0f4a68",
     padding: 8,
+    fontSize: 16,
   },
   activity: {
     height: height * 0.07,

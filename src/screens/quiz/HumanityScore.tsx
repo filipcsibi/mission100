@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     borderRadius: 85,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 60,
     shadowColor: "#FFD700",
     shadowOpacity: 0.8,
     shadowRadius: 15,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#1eb4e8",
     marginHorizontal: 20,
-    marginBottom: 20,
+    marginBottom: 30,
     textShadowColor: "#444444",
     textShadowRadius: 8,
     textShadowOffset: { width: 0, height: 0 },
@@ -157,14 +157,14 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#1eb4e8",
-    paddingVertical: 12,
-    paddingHorizontal: 30,
-    borderRadius: 25,
+    padding: 24,
+    borderRadius: 24,
+    marginTop: 20,
   },
   buttonText: {
     color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "600",
+    fontSize: 20,
+    fontWeight: "bold",
   },
 });
 
