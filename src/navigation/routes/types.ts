@@ -4,3 +4,9 @@ export type RootStackParamList = {
   landingscreen: undefined;
   tabnavigator: undefined;
 };
+export type QuizStackParamList = {
+  humanityscorescreen: undefined;
+  genderselectionscreen: undefined;
+  agescreen: undefined;
+  authstack: undefined;
+};

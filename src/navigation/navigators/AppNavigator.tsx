@@ -3,10 +3,9 @@ import {
   NavigationContainer,
   NavigationIndependentTree,
 } from "@react-navigation/native";
-import React, { useContext, useEffect, useState } from "react";
-import { ActivityIndicator, View } from "react-native";
+import React, { useContext } from "react";
 import TabNavigator from "./TabNavigator";
-import AuthNavigator from "./AuthNavigator";
+import QuizNavigator from "./QuizNavigator";
 
 const AppNavigator: React.FC = () => {
   const { user } = useContext(UserContext) as UserContextType;
@@ -14,7 +13,7 @@ const AppNavigator: React.FC = () => {
   return (
     <NavigationIndependentTree>
       <NavigationContainer>
-        {user ? <TabNavigator /> : <AuthNavigator />}
+        {user ? <TabNavigator /> : <QuizNavigator />}
       </NavigationContainer>
     </NavigationIndependentTree>
   );
