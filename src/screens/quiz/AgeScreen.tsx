@@ -34,6 +34,7 @@ const AgeScreen: React.FC = () => {
         maximumValue={100}
         step={1}
         value={age}
+        onValueChange={handleAgeChange}
         minimumTrackTintColor="#1eb4e8"
         maximumTrackTintColor="#0f4a68"
         thumbTintColor="#0f4a68"
