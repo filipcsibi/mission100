@@ -2,20 +2,17 @@ import {
   Account,
   Home,
   HomeFill,
-  Post,
-  PostFill,
-  Search,
-  SearchFill,
+  Leaderboard,
+  LeaderboardFill,
+  Robot,
+  RobotFill,
 } from "@/assets/svgs";
 
 import ChatScreen from "@/src/screens/chat/ChatScreen";
+import LeaderboardScreen from "@/src/screens/leaderboard/LeaderBoardScreen";
 
 import ProfileScreen from "@/src/screens/ProfileScreen";
-
-import Screen1 from "@/src/screens/Screen1";
-import Screen2 from "@/src/screens/Screen2";
 import Screen3 from "@/src/screens/Screen3";
-import Screen4 from "@/src/screens/Screen4";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useEffect } from "react";
 
@@ -41,7 +38,7 @@ const TabNavigator = () => {
     >
       <Tab.Screen
         name="feedscreen"
-        component={Screen1}
+        component={Screen3}
         options={{
           tabBarIcon: ({ focused }) =>
             focused ? (
@@ -65,21 +62,21 @@ const TabNavigator = () => {
           headerTitleAlign: "center",
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <SearchFill width={32} height={32} />
+              <RobotFill width={32} height={32} />
             ) : (
-              <Search width={32} height={32} />
+              <Robot width={32} height={32} />
             ),
         }}
       />
       <Tab.Screen
         name="postscreen"
-        component={Screen3}
+        component={LeaderboardScreen}
         options={{
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <PostFill width={32} height={32} />
+              <LeaderboardFill width={32} height={32} />
             ) : (
-              <Post width={32} height={32} />
+              <Leaderboard width={32} height={32} />
             ),
         }}
       />
