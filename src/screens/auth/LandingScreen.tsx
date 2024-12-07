@@ -10,10 +10,14 @@ import {
 } from "react-native";
 import { RootStackParamList } from "../../navigation/routes/types";
 const { width, height } = Dimensions.get("window");
+import * as Haptics from "expo-haptics";
 
 const LandingScreen: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const Logo = require("../../../assets/images/mission100logo.jpeg");
+  const triggerHapticFeedback = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); // Ultra-short feedback
+  };
   useEffect(() => {
     console.log("authmounted");
   }, []);
@@ -33,7 +37,10 @@ const LandingScreen: React.FC = () => {
           <Text style={styles.quote}>Do you want to live 100 years?</Text>
           <TouchableOpacity
             style={styles.touchable}
-            onPress={() => navigation.navigate("registerscreen")}
+            onPress={() => {
+              navigation.navigate("registerscreen");
+              triggerHapticFeedback();
+            }}
           >
             <Text style={styles.buttontext}>ABSOLUTELY!</Text>
           </TouchableOpacity>
@@ -49,7 +56,10 @@ const LandingScreen: React.FC = () => {
         >
           <Text
             style={styles.login}
-            onPress={() => navigation.navigate("loginscreen")}
+            onPress={() => {
+              navigation.navigate("loginscreen");
+              triggerHapticFeedback();
+            }}
           >
             I already have an account.
           </Text>

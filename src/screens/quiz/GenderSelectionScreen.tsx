@@ -10,6 +10,8 @@ import {
   Image,
   Dimensions,
 } from "react-native";
+import * as Haptics from "expo-haptics";
+
 const width = Dimensions.get("window").width;
 const GenderScreen: React.FC = () => {
   const navigation = useNavigation<NavigationProp<QuizStackParamList>>();
@@ -21,8 +23,11 @@ const GenderScreen: React.FC = () => {
   const handleGenderSelect = (gender: "male" | "female") => {
     setSelectedGender(gender);
   };
-
+  const triggerHapticFeedback = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); // Ultra-short feedback
+  };
   const handleConfirm = () => {
+    triggerHapticFeedback();
     navigation.navigate("agescreen");
   };
 

@@ -1,10 +1,8 @@
 // LoginScreen.tsx
 import { Apple, Facebook, Google } from "@/assets/svgs";
 import { Authentication } from "../../../FirebaseConfig";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { Vibration } from "react-native";
+
 import React, { useContext, useState } from "react";
 import {
   View,
@@ -23,6 +21,7 @@ import { NavigationProp } from "@react-navigation/native";
 import { RootStackParamList } from "../../navigation/routes/types";
 import GoBackButton from "../../navigation/GoBack";
 import { UserContext, UserContextType } from "../../user/UserContext";
+import * as Haptics from "expo-haptics";
 
 const LoginScreen = ({
   navigation,
@@ -33,6 +32,9 @@ const LoginScreen = ({
   const [password, setPassword] = useState("");
   const auth = Authentication;
   const { login, loading } = useContext(UserContext) as UserContextType;
+  const triggerHapticFeedback = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); // Ultra-short feedback
+  };
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
       <View style={styles.container}>
@@ -48,7 +50,10 @@ const LoginScreen = ({
               placeholder="Email Address"
               value={email}
               placeholderTextColor={"grey"}
-              onChangeText={(email) => setEmail(email)}
+              onChangeText={(email) => {
+                setEmail(email);
+                triggerHapticFeedback(); // Vibrație scurtă
+              }}
               autoCapitalize="none"
             />
             <TextInput
@@ -57,7 +62,10 @@ const LoginScreen = ({
               secureTextEntry
               value={password}
               placeholderTextColor={"grey"}
-              onChangeText={(password) => setPassword(password)}
+              onChangeText={(password) => {
+                setPassword(password);
+                triggerHapticFeedback();
+              }}
               autoCapitalize="none"
             />
             <Text style={styles.forgot}>Forgot password?</Text>
@@ -70,7 +78,10 @@ const LoginScreen = ({
             <View>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => login(email, password)}
+                onPress={() => {
+                  login(email, password);
+                  triggerHapticFeedback();
+                }}
                 activeOpacity={0}
               >
                 <Text style={styles.buttonText}>Login</Text>
