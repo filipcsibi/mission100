@@ -12,9 +12,9 @@ import ChatScreen from "@/src/screens/chat/ChatScreen";
 import LeaderboardScreen from "@/src/screens/leaderboard/LeaderBoardScreen";
 
 import ProfileScreen from "@/src/screens/ProfileScreen";
-import Screen3 from "@/src/screens/Screen3";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useEffect } from "react";
+import MainScreenNavigator from "./MainScreenNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -38,7 +38,7 @@ const TabNavigator = () => {
     >
       <Tab.Screen
         name="feedscreen"
-        component={Screen3}
+        component={MainScreenNavigator}
         options={{
           tabBarIcon: ({ focused }) =>
             focused ? (
@@ -46,6 +46,7 @@ const TabNavigator = () => {
             ) : (
               <Home width={32} height={32} />
             ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -72,6 +73,14 @@ const TabNavigator = () => {
         name="postscreen"
         component={LeaderboardScreen}
         options={{
+          headerTitle: "Leaderboard",
+          headerTitleStyle: {
+            color: "#0f4a68",
+            fontSize: 24,
+            fontWeight: "bold",
+            fontFamily: "Courier",
+          },
+          headerTitleAlign: "center",
           tabBarIcon: ({ focused }) =>
             focused ? (
               <LeaderboardFill width={32} height={32} />

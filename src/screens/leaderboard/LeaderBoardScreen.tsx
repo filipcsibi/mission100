@@ -113,7 +113,6 @@ const LeaderboardItem: React.FC<{ player: Player; index: number }> = ({
 const LeaderboardScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Leaderboard</Text>
       <TopThree players={leaderboardData.slice(0, 3)} />
       <ScrollView style={styles.scrollView}>
         {leaderboardData.slice(3).map((player, index) => (
@@ -140,7 +139,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "flex-end",
-    marginBottom: 20,
+    marginVertical: 20,
     paddingHorizontal: 10,
   },
   firstPlace: {
@@ -185,7 +184,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "white",
-    padding: 15,
+    padding: 8,
     marginVertical: 8,
     borderRadius: 10,
     shadowColor: "#000",

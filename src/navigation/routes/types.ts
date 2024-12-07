@@ -10,3 +10,8 @@ export type QuizStackParamList = {
   agescreen: undefined;
   authstack: undefined;
 };
+
+export type MainStackParamList = {
+  homescreen: undefined;
+  detailscreen: undefined;
+};

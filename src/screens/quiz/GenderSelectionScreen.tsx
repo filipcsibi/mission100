@@ -1,76 +1,70 @@
+import { QuizStackParamList } from "@/src/navigation/routes/types";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import {
   View,
   Text,
-  TouchableOpacity,
-  Image,
   StyleSheet,
-  ProgressBarAndroid,
+  TouchableOpacity,
+  SafeAreaView,
+  Image,
+  Dimensions,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { NavigationProp } from "@react-navigation/native";
-import { QuizStackParamList } from "@/src/navigation/routes/types";
-
-const GenderSelectionScreen = () => {
+const width = Dimensions.get("window").width;
+const GenderScreen: React.FC = () => {
   const navigation = useNavigation<NavigationProp<QuizStackParamList>>();
-  const [selectedGender, setSelectedGender] = useState<string | null>(null);
-  const progress = 0.25;
 
-  const femaleIcon = require("../../../assets/images/female.png");
-  const maleIcon = require("../../../assets/images/male.png");
+  const [selectedGender, setSelectedGender] = useState<
+    "male" | "female" | null
+  >(null);
 
-  const handleContinue = () => {
-    if (selectedGender) {
-      navigation.navigate("agescreen");
-    } else {
-      alert("Please select a gender to continue.");
-    }
+  const handleGenderSelect = (gender: "male" | "female") => {
+    setSelectedGender(gender);
+  };
+
+  const handleConfirm = () => {
+    navigation.navigate("agescreen");
   };
 
   return (
-    <View style={styles.container}>
-      {/* Main Text */}
-      <Text style={styles.mainText}>What’s your biological sex?</Text>
-      <Text style={styles.subText}>
-        Our X and Y chromosomes affect many aspects of our health, aging
-        included.
-      </Text>
-      <View style={styles.cardContainer}>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>Choose your gender</Text>
+      <View style={styles.genderContainer}>
         <TouchableOpacity
           style={[
-            styles.card,
-            selectedGender === "female" && styles.selectedCard,
+            styles.genderButton,
+            selectedGender === "male" && styles.selectedGender,
           ]}
-          onPress={() => setSelectedGender("female")}
+          onPress={() => handleGenderSelect("male")}
         >
-          <Image source={femaleIcon} style={styles.icon} />
-          <Text style={styles.cardText}>Female</Text>
+          <Image
+            source={require("../../../assets/images/male.png")}
+            style={styles.genderIcon}
+          />
+          <Text style={styles.genderText}>Man</Text>
         </TouchableOpacity>
-
         <TouchableOpacity
           style={[
-            styles.card,
-            selectedGender === "male" && styles.selectedCard,
+            styles.genderButton,
+            selectedGender === "female" && styles.selectedGender,
           ]}
-          onPress={() => setSelectedGender("male")}
+          onPress={() => handleGenderSelect("female")}
         >
-          <Image source={maleIcon} style={styles.icon} />
-          <Text style={styles.cardText}>Male</Text>
+          <Image
+            source={require("../../../assets/images/female.png")}
+            style={styles.genderIcon}
+          />
+          <Text style={styles.genderText}>Woman</Text>
         </TouchableOpacity>
       </View>
-
-      <ProgressBarAndroid
-        styleAttr="Horizontal"
-        indeterminate={false}
-        progress={progress}
-        color="#007BFF"
-        style={styles.progressBar}
-      />
-
-      <TouchableOpacity style={styles.button} onPress={handleContinue}>
-        <Text style={styles.buttonText}>Continue</Text>
+      <TouchableOpacity
+        style={[styles.confirmButton, !selectedGender && styles.disabledButton]}
+        onPress={handleConfirm}
+        disabled={!selectedGender}
+      >
+        <Text style={styles.confirmButtonText}>Confirm</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -79,70 +73,56 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#0f4a68",
-    padding: 16,
+    backgroundColor: "#ffffff",
+    padding: 20,
   },
-  mainText: {
-    fontSize: 22,
+  title: {
+    fontSize: 24,
     fontWeight: "bold",
-    textAlign: "center",
-    color: "#FFFFFF",
-    marginBottom: 8,
+    color: "#0f4a68",
+    marginBottom: 40,
   },
-  subText: {
-    fontSize: 16,
-    textAlign: "center",
-    color: "#d3d3d3",
-    marginHorizontal: 16,
-    marginBottom: 20,
-  },
-  cardContainer: {
+  genderContainer: {
     flexDirection: "row",
     justifyContent: "space-around",
     width: "100%",
-    marginBottom: 20,
+    marginBottom: 40,
   },
-  card: {
-    backgroundColor: "#1a75a3",
-    padding: 16,
-    borderRadius: 10,
+  genderButton: {
     alignItems: "center",
-    justifyContent: "center",
-    width: 140,
-    height: 160,
+    padding: 30,
+    borderRadius: 10,
     borderWidth: 2,
-    borderColor: "transparent",
+    borderColor: "#1eb4e8",
   },
-  selectedCard: {
-    borderColor: "#FFD700",
+  selectedGender: {
+    backgroundColor: "#1eb4e8",
   },
-  icon: {
-    width: 60,
-    height: 60,
+  genderIcon: {
+    width: width * 0.2,
+    height: width * 0.25,
     marginBottom: 10,
     resizeMode: "contain",
   },
-  cardText: {
-    fontSize: 16,
-    color: "#FFFFFF",
-    fontWeight: "600",
+  genderText: {
+    fontSize: 18,
+    color: "#0f4a68",
+    fontWeight: "bold",
   },
-  progressBar: {
-    width: "90%",
-    height: 10,
-    marginBottom: 20,
-  },
-  button: {
-    backgroundColor: "#007BFF",
+  confirmButton: {
+    backgroundColor: "#0f4a68",
     paddingVertical: 12,
     paddingHorizontal: 30,
     borderRadius: 25,
   },
-  buttonText: {
-    color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "600",
+  disabledButton: {
+    backgroundColor: "#cccccc",
+  },
+  confirmButtonText: {
+    color: "#ffffff",
+    fontSize: 18,
+    fontWeight: "bold",
   },
 });
 
-export default GenderSelectionScreen;
+export default GenderScreen;
