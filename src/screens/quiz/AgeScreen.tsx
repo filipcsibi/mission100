@@ -12,6 +12,7 @@ import {
   QuizStackParamList,
   RootStackParamList,
 } from "@/src/navigation/routes/types";
+import * as Haptics from "expo-haptics";
 
 const AgeScreen: React.FC = () => {
   const [age, setAge] = useState(18);
@@ -19,8 +20,12 @@ const AgeScreen: React.FC = () => {
   const handleAgeChange = (value: number) => {
     setAge(Math.round(value));
   };
-
+  const triggerHapticFeedback = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); // Ultra-short feedback
+  };
   const handleConfirm = () => {
+    triggerHapticFeedback();
+
     navigation.navigate("authstack");
   };
 

@@ -10,13 +10,16 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { NavigationProp } from "@react-navigation/native";
 import { QuizStackParamList } from "@/src/navigation/routes/types";
+import * as Haptics from "expo-haptics";
 
 const HumanityScore = () => {
   const navigation = useNavigation<NavigationProp<QuizStackParamList>>();
   const Logo = require("../../../assets/images/mission100logo.jpeg");
   const [score, setScore] = useState<number>(0);
   const [circleColor, setCircleColor] = useState("#FF0000");
-
+  const triggerHapticFeedback = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); // Ultra-short feedback
+  };
   const bubbleAnimation = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
@@ -88,7 +91,10 @@ const HumanityScore = () => {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate("genderselectionscreen")}
+        onPress={() => {
+          navigation.navigate("genderselectionscreen");
+          triggerHapticFeedback();
+        }}
       >
         <Text style={styles.buttonText}>Start Your Journey</Text>
       </TouchableOpacity>
@@ -158,12 +164,13 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#1eb4e8",
     padding: 24,
+    paddingVertical: 20,
     borderRadius: 24,
     marginTop: 20,
   },
   buttonText: {
     color: "#FFFFFF",
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: "bold",
   },
 });

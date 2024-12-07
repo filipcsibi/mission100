@@ -1,11 +1,6 @@
 // LoginScreen.tsx
 import { Apple, Facebook, Google } from "@/assets/svgs";
-import { Authentication, DataBase } from "../../../FirebaseConfig";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
+import * as Haptics from "expo-haptics";
 import React, { useContext, useState } from "react";
 import {
   View,
@@ -14,7 +9,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   ActivityIndicator,
-  Image,
   Dimensions,
 } from "react-native";
 import GoBackButton from "../../navigation/GoBack";
@@ -27,7 +21,9 @@ const RegisterScreen: React.FC = () => {
   const [username, setUsername] = useState("");
   const [fullname, setFullName] = useState("");
   const { register, loading } = useContext(UserContext) as UserContextType;
-
+  const triggerHapticFeedback = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); // Ultra-short feedback
+  };
   return (
     <View style={styles.container}>
       <GoBackButton />
@@ -41,14 +37,20 @@ const RegisterScreen: React.FC = () => {
           placeholder="Full name"
           value={fullname}
           placeholderTextColor={"grey"}
-          onChangeText={(fullname) => setFullName(fullname)}
+          onChangeText={(fullname) => {
+            setFullName(fullname);
+            triggerHapticFeedback();
+          }}
         />
         <TextInput
           style={styles.placeholder}
           placeholder="Username"
           value={username}
           placeholderTextColor={"grey"}
-          onChangeText={(username) => setUsername(username)}
+          onChangeText={(username) => {
+            setUsername(username);
+            triggerHapticFeedback();
+          }}
           autoCapitalize="none"
         />
         <TextInput
@@ -56,7 +58,10 @@ const RegisterScreen: React.FC = () => {
           placeholder="Email Address"
           value={email}
           placeholderTextColor={"grey"}
-          onChangeText={(email) => setEmail(email)}
+          onChangeText={(email) => {
+            setEmail(email);
+            triggerHapticFeedback();
+          }}
           autoCapitalize="none"
         />
         <TextInput
@@ -65,7 +70,10 @@ const RegisterScreen: React.FC = () => {
           secureTextEntry
           value={password}
           placeholderTextColor={"grey"}
-          onChangeText={(password) => setPassword(password)}
+          onChangeText={(password) => {
+            setPassword(password);
+            triggerHapticFeedback();
+          }}
           autoCapitalize="none"
         />
       </View>
@@ -78,7 +86,10 @@ const RegisterScreen: React.FC = () => {
         <View>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => register(fullname, username, email, password)}
+            onPress={() => {
+              register(fullname, username, email, password);
+              triggerHapticFeedback();
+            }}
             activeOpacity={0}
           >
             <Text style={styles.buttonText}>Register</Text>
