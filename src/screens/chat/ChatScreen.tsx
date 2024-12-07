@@ -4,10 +4,9 @@ import { GiftedChat, IMessage, InputToolbar } from "react-native-gifted-chat";
 import uuid from "react-native-uuid";
 import OpenAI from "openai";
 import Markdown from "react-native-markdown-display";
-import { OPEN_API_KEY } from "@env";
 
 export const openai = new OpenAI({
-  apiKey: OPEN_API_KEY,
+  apiKey: "OPEN_API_KEY",
 });
 
 interface CustomMessageTextProps {

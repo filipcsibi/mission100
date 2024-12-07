@@ -9,10 +9,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationProp } from "@react-navigation/native";
-import {
-  QuizStackParamList,
-  RootStackParamList,
-} from "@/src/navigation/routes/types";
+import { QuizStackParamList } from "@/src/navigation/routes/types";
 
 const HumanityScore = () => {
   const navigation = useNavigation<NavigationProp<QuizStackParamList>>();
@@ -159,7 +156,7 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
   button: {
-    backgroundColor: "#007BFF",
+    backgroundColor: "#1eb4e8",
     paddingVertical: 12,
     paddingHorizontal: 30,
     borderRadius: 25,
