@@ -18,7 +18,15 @@ import SearchFill from "./SearchFill.svg";
 import Camera from "./Camera.svg";
 import Gallery from "./Gallery.svg";
 import FavFill from "./FavFill.svg";
+import Robot from "./Robot.svg";
+import RobotFill from "./RobotFill.svg";
+import Leaderboard from "./Leaderboard.svg";
+import LeaderboardFill from "./LeaderboardFill.svg";
 export {
+  LeaderboardFill,
+  Leaderboard,
+  RobotFill,
+  Robot,
   FavFill,
   Gallery,
   Camera,
