@@ -6,7 +6,7 @@ import OpenAI from "openai";
 import Markdown from "react-native-markdown-display";
 
 export const openai = new OpenAI({
-  apiKey: "OPEN_API_KEY",
+  apiKey: "GPT_KEY",
 });
 
 interface CustomMessageTextProps {
