@@ -6,12 +6,14 @@ import {
   StyleSheet,
   TouchableOpacity,
   Animated,
+  Dimensions,
+  SafeAreaView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationProp } from "@react-navigation/native";
 import { QuizStackParamList } from "@/src/navigation/routes/types";
 import * as Haptics from "expo-haptics";
-
+const { width } = Dimensions.get("window");
 const HumanityScore = () => {
   const navigation = useNavigation<NavigationProp<QuizStackParamList>>();
   const Logo = require("../../../assets/images/mission100logo.jpeg");
@@ -64,9 +66,7 @@ const HumanityScore = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Image source={Logo} style={styles.logo} />
-
+    <SafeAreaView style={styles.container}>
       <Animated.View
         style={[
           styles.scoreCircle,
@@ -96,9 +96,9 @@ const HumanityScore = () => {
           triggerHapticFeedback();
         }}
       >
-        <Text style={styles.buttonText}>Start Your Journey</Text>
+        <Text style={styles.buttonText}>I'M READY!</Text>
       </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     position: "absolute",
-    top: -30,
+    top: -width * 0.1,
     width: 250,
     height: 250,
     resizeMode: "contain",
@@ -164,8 +164,8 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#1eb4e8",
     padding: 24,
-    paddingVertical: 20,
-    borderRadius: 24,
+    paddingVertical: 16,
+    borderRadius: 20,
     marginTop: 20,
   },
   buttonText: {
